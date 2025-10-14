@@ -1,0 +1,51 @@
+City,State,Borrower_2,Borrower_3,Borrower_4,Loan Number,Date_af_date,Borrower,Borrowers,RelationshiptoCoborrower,RelationshiptoBorrower,LoanAmountText,InterestRate,LoanAmount,Borrower1Initials,Borrower2Initials,Borrower3Initials,Borrower4Initials
+Sweetwater,USA,Reese Martin,,,LN-100000,22-Jun-25,John Jones,John Jones / Reese Martin,Spouse,Self,Three Hundred Twenty Five Thousand,0.00%,"$325,000 ",JJ,RM,NA,NA
+Springfield,USA,Cameron Thomas,,,LN-100001,25-Aug-25,Lee Wilson,Lee Wilson / Cameron Thomas,Spouse,Self,Two Hundred Forty Five Thousand,4.50%,"$245,000 ",LW,CT,NA,NA
+Sweetwater,USA,Dana Lopez,,,LN-100002,14-Jul-25,Maria Lee,Maria Lee / Dana Lopez,Spouse,Self,Two Hundred Sixty Thousand,4.00%,"$260,000 ",ML,NA,NA,DL
+Homestead,USA,Avery Anderson,,,LN-100003,15-Sep-25,Taylor White,Taylor White / Avery Anderson,Spouse,Self,Four Hundred Thirty Thousand,7.00%,"$430,000 ",TW,AA,KR,NA
+Sweetwater,USA,Jordan Martinez,,,LN-100004,16-Aug-25,Chris Thompson,Chris Thompson / Jordan Martinez,Spouse,Self,Four Hundred Fifty Thousand,4.50%,"$450,000 ",CT,JM,NA,NA
+Hialeah,USA,Avery Davis,,,LN-100005,14-Jun-25,Avery Thompson,Avery Thompson / Avery Davis,Spouse,Self,Four Hundred Sixty Five Thousand,5.00%,"$465,000 ",AT,AD,NA,NA
+Miami Beach,USA,Shawn Doe,,,LN-100006,9-Sep-25,Alex Moore,Alex Moore / Shawn Doe,Spouse,Self,Four Hundred Eighty Five Thousand,6.25%,"$485,000 ",AM,SD,NA,NA
+Coral Gables,USA,Dana Perez,,,LN-100007,1-Sep-25,Chris Lee,Chris Lee / Dana Perez,Spouse,Self,Two Hundred Fifty Five Thousand,5.00%,"$255,000 ",CL,DP,NA,NA
+Miami,USA,NA,,,LN-100008,19-Sep-25,Dana Gonzalez,Dana Gonzalez,N/A,Self,Four Hundred Seventy Five Thousand,5.00%,"$475,000 ",DG,NA,NA,NA
+Sweetwater,USA,Quinn Gonzalez,,,LN-100009,13-Jul-25,Sam Martinez,Sam Martinez / Quinn Gonzalez,Spouse,Self,Four Hundred Five Thousand,8.00%,"$405,000 ",SM,QG,AM,NA
+Aventura,USA,Casey Williams,,,LN-100010,14-Jul-25,Rowan Harris,Rowan Harris / Casey Williams,Spouse,Self,Four Hundred Fifty Thousand,4.50%,"$450,000 ",RH,NA,NA,CW
+Homestead,USA,Jamie Jackson,,,LN-100011,4-Jun-25,Kendall Harris,Kendall Harris / Jamie Jackson,Spouse,Self,Three Hundred Seventy Five Thousand,0.00%,"$375,000 ",KH,JJ,NA,NA
+Hialeah,USA,Shawn Thompson,,,LN-100012,11-Jun-25,Maria Thompson,Maria Thompson / Shawn Thompson,Spouse,Self,Two Hundred Eighty Five Thousand,7.00%,"$285,000 ",MT,ST,NA,NA
+Miami Beach,USA,Shawn Taylor,,,LN-100013,25-Sep-25,John Anderson,John Anderson / Shawn Taylor,Spouse,Self,Four Hundred Sixty Five Thousand,3.25%,"$465,000 ",JA,ST,JR,NA
+Cutler Bay,USA,NA,,,LN-100014,20-Sep-25,Chris Miller,Chris Miller,N/A,Self,Two Hundred Ninety Five Thousand,7.00%,"$295,000 ",CM,NA,NA,NA
+North Miami,USA,NA,,,LN-100015,14-Jun-25,Jamie Brown,Jamie Brown,N/A,Self,Four Hundred Seventy Thousand,7.00%,"$470,000 ",JB,NA,NA,NA
+Hialeah,USA,Avery Moore,,,LN-100016,22-Jul-25,Maria Davis,Maria Davis / Avery Moore,Spouse,Self,Three Hundred Eighty Thousand,3.25%,"$380,000 ",MD,AM,NA,NA
+Aventura,USA,Casey Smith,,,LN-100017,7-Jul-25,Jane Harris,Jane Harris / Casey Smith,Spouse,Self,Three Hundred Fifteen Thousand,6.25%,"$315,000 ",JH,CS,NA,NA
+Springfield,USA,Morgan Martin,,,LN-100018,18-Jul-25,Quinn Moore,Quinn Moore / Morgan Martin,Spouse,Self,Three Hundred Seventy Thousand,4.50%,"$370,000 ",QM,MM,CL,NA
+Hialeah,USA,Jane Hernandez,,,LN-100019,13-Aug-25,Casey Moore,Casey Moore / Jane Hernandez,Spouse,Self,Three Hundred Eighty Five Thousand,2.75%,"$385,000 ",CM,JH,NA,NA
+Miami,USA,Reese Smith,,,LN-100020,11-Jun-25,Quinn Rodriguez,Quinn Rodriguez / Reese Smith,Spouse,Self,Four Hundred Ninety Thousand,4.50%,"$490,000 ",QR,RS,NA,NA
+Sweetwater,USA,Alex Thompson,,,LN-100021,25-Jun-25,Shawn Perez,Shawn Perez / Alex Thompson,Spouse,Self,Two Hundred Fifty Five Thousand,4.00%,"$255,000 ",SP,AT,NA,NA
+North Miami,USA,Logan Thomas,,,LN-100022,24-Sep-25,Logan Perez,Logan Perez / Logan Thomas,Spouse,Self,Three Hundred Ninety Five Thousand,4.50%,"$395,000 ",LP,LT,NA,NA
+North Miami,USA,John Johnson,,,LN-100023,17-Jun-25,Avery Davis,Avery Davis / John Johnson,Spouse,Self,Four Hundred Five Thousand,4.50%,"$405,000 ",AD,JJ,NA,NA
+Aventura,USA,Reese White,,,LN-100024,23-Jun-25,Drew White,Drew White / Reese White,Spouse,Self,Four Hundred Seventy Thousand,1.50%,"$470,000 ",DW,RW,NA,NA
+Cutler Bay,USA,Avery Lopez,,,LN-100025,25-Aug-25,Skyler Williams,Skyler Williams / Avery Lopez,Spouse,Self,Two Hundred Sixty Five Thousand,4.50%,"$265,000 ",SW,AL,NA,JM
+Springfield,USA,NA,,,LN-100026,28-Jul-25,Avery Harris,Avery Harris / Reese Thomas,Spouse,Self,Two Hundred Sixty Five Thousand,5.00%,"$265,000 ",AH,NA,RT,NA
+Cutler Bay,USA,Taylor Miller,,,LN-100027,9-Jul-25,Sam Garcia,Sam Garcia / Taylor Miller,Spouse,Self,Two Hundred Twenty Thousand,6.25%,"$220,000 ",SG,TM,NA,RR
+Miami,USA,Alex Taylor,,,LN-100028,5-Jun-25,Alex Gonzalez,Alex Gonzalez / Alex Taylor,Spouse,Self,Four Hundred Sixty Thousand,8.00%,"$460,000 ",AG,AT,NA,NA
+Cutler Bay,USA,Pat Johnson,,,LN-100029,16-Jul-25,Jane Davis,Jane Davis / Pat Johnson,Spouse,Self,Three Hundred Twenty Five Thousand,2.75%,"$325,000 ",JD,PJ,JR,NA
+Miami,USA,Quinn Lopez,,,LN-100030,17-Aug-25,Sam Gonzalez,Sam Gonzalez / Quinn Lopez,Spouse,Self,Three Hundred Forty Five Thousand,8.00%,"$345,000 ",SG,QL,NA,NA
+Springfield,USA,Maria Williams,,,LN-100031,5-Jun-25,Pat Johnson,Pat Johnson / Maria Williams,Spouse,Self,Four Hundred Seventy Five Thousand,0.00%,"$475,000 ",PJ,MW,NA,NA
+Springfield,USA,Riley Lee,,,LN-100032,20-Jul-25,Casey Thompson,Casey Thompson / Riley Lee,Spouse,Self,Three Hundred Twenty Thousand,4.00%,"$320,000 ",CT,RL,NA,NA
+Coral Gables,USA,NA,,,LN-100033,25-Jun-25,Riley Smith,Riley Smith,N/A,Self,Four Hundred Fifty Five Thousand,2.75%,"$455,000 ",RS,NA,NA,NA
+Doral,USA,Taylor Harris,,,LN-100034,3-Jun-25,Shawn Johnson,Shawn Johnson / Taylor Harris,Spouse,Self,Four Hundred Eighty Thousand,5.00%,"$480,000 ",SJ,TH,NA,NA
+Hialeah,USA,Maria Smith,,,LN-100035,23-Sep-25,John Thompson,John Thompson / Maria Smith,Spouse,Self,Four Hundred Twenty Five Thousand,2.75%,"$425,000 ",JT,MS,NA,SM
+Aventura,USA,Casey White,,,LN-100036,22-Jul-25,Quinn Johnson,Quinn Johnson / Casey White,Spouse,Self,Two Hundred Ninety Thousand,2.75%,"$290,000 ",QJ,CW,NA,NA
+Aventura,USA,NA,,,LN-100037,5-Aug-25,Drew Wilson,Drew Wilson / Drew Gonzalez,Spouse,Self,Three Hundred Seventy Five Thousand,4.00%,"$375,000 ",DW,NA,DG,NA
+Kendall,USA,Reese Lopez,,,LN-100038,5-Jul-25,Rowan Perez,Rowan Perez / Reese Lopez,Spouse,Self,Two Hundred Seventy Thousand,3.25%,"$270,000 ",RP,RL,NA,NA
+Aventura,USA,NA,,,LN-100039,30-Aug-25,Lee White,Lee White,N/A,Self,Two Hundred Seventy Five Thousand,4.00%,"$275,000 ",LW,NA,NA,NA
+Pinecrest,USA,Quinn Thomas,,,LN-100040,8-Jun-25,Rowan Moore,Rowan Moore / Quinn Thomas,Spouse,Self,Four Hundred Forty Thousand,3.25%,"$440,000 ",RM,QT,NA,NA
+Miami Beach,USA,Dana Perez,,,LN-100041,6-Aug-25,Reese Hernandez,Reese Hernandez / Dana Perez,Spouse,Self,Four Hundred Twenty Thousand,0.00%,"$420,000 ",RH,DP,LW,NA
+Cutler Bay,USA,Casey Martin,,,LN-100042,29-Jul-25,Drew Anderson,Drew Anderson / Casey Martin,Spouse,Self,Two Hundred Fifty Thousand,2.75%,"$250,000 ",DA,CM,NA,NA
+Coral Gables,USA,NA,,,LN-100043,1-Sep-25,John Hernandez,John Hernandez / Casey White,Spouse,Self,Three Hundred Seventy Thousand,5.00%,"$370,000 ",JH,NA,NA,CW
+Hialeah,USA,NA,,,LN-100044,22-Jun-25,Maria Lopez,Maria Lopez / Taylor Brown,Spouse,Self,Four Hundred Sixty Thousand,4.50%,"$460,000 ",ML,NA,NA,TB
+Cutler Bay,USA,Avery Martin,,,LN-100045,31-Aug-25,Skyler Doe,Skyler Doe / Avery Martin,Spouse,Self,Four Hundred Ninety Five Thousand,2.75%,"$495,000 ",SD,AM,NA,NA
+Doral,USA,Reese Martinez,,,LN-100046,25-Sep-25,Kendall Martin,Kendall Martin / Reese Martinez,Spouse,Self,Two Hundred Five Thousand,6.25%,"$205,000 ",KM,RM,CA,NA
+Miami Beach,USA,Reese Jackson,,,LN-100047,5-Jun-25,John Martin,John Martin / Reese Jackson,Spouse,Self,Four Hundred Seventy Five Thousand,4.50%,"$475,000 ",JM,RJ,NA,NA
+Kendall,USA,Morgan Davis,,,LN-100048,22-Jun-25,Rowan Miller,Rowan Miller / Morgan Davis,Spouse,Self,Two Hundred Forty Thousand,0.00%,"$240,000 ",RM,MD,RJ,NA
+Cutler Bay,USA,Pat Anderson,,,LN-100049,14-Jun-25,Pat Miller,Pat Miller / Pat Anderson,Spouse,Self,Two Hundred Eighty Five Thousand,1.50%,"$285,000 ",PM,PA,JR,NA
