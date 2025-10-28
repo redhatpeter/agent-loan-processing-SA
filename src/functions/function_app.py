@@ -1,7 +1,7 @@
-import azure.functions as func
-import json, math
-
 import datetime
+import json
+
+import azure.functions as func
 
 app = func.FunctionApp()
 
