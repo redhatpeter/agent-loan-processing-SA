@@ -131,6 +131,9 @@ dmypy.json
 
 # Custom environment files
 *.env
+.env.dev
+.env.prod
+.env.test
 environment.env
 globalparameters.env
 
