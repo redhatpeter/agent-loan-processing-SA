@@ -6,6 +6,23 @@ __pycache__/
 # C extensions
 *.so
 
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Frontend build outputs
+dist/
+build/
+.next/
+out/
+
+# UV lock files (Python dependency manager)
+uv.lock
+
+
 # Distribution / packaging
 .Python
 build/
@@ -156,3 +173,11 @@ Thumbs.db
 temp/
 output/
 logs/
+input/
+data/sample_documents/
+*.pdf
+*.docx
+*.xlsx
+
+# Accidental Windows null files
+nul

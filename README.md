@@ -263,7 +263,7 @@ uv venv
 .\.venv\Scripts\Activate.ps1
 
 # Bash
-source .venv/bin/activate
+source .venv/Scripts/activate
 
 # Install all dependencies
 uv sync --active --prerelease=allow
@@ -305,7 +305,7 @@ uv venv
 .\.venv\Scripts\Activate.ps1
 
 # Bash
-source .venv/bin/activate
+source .venv/Scripts/activate
 # Install all dependencies
 uv sync
 
