@@ -175,6 +175,8 @@ output/
 logs/
 input/
 data/sample_documents/
+# Allow PDF files in upload_data folder for testing
+!src/backend/app/upload_data/*.pdf
 *.pdf
 *.docx
 *.xlsx
