@@ -76,7 +76,10 @@ async def apr_tool(req: func.HttpRequest) -> func.HttpResponse:
             "effective_apr": effective_apr,
             "credit_score": credit_score,
             "debt_to_income": dti,
-            "notes": f"APR adjusted based on loan amount ({loan_amount}), credit score ({credit_score}) and DTI ({dti})",
+            "notes": (
+                f"APR adjusted based on loan amount ({loan_amount}), "
+                f"credit score ({credit_score}) and DTI ({dti})"
+            ),
         }
 
         return func.HttpResponse(
@@ -164,11 +167,11 @@ async def loan_validation(req: func.HttpRequest) -> func.HttpResponse:
             "loan_amount": loan_amount,
             "credit_score": credit_score,
             "debt_to_income": dti,
-            "validation_notes": f"""
-                APR validation {'passed' if is_valid else 'failed'}. 
-                Expected: {expected_effective_apr}, 
-                Calculated: {calculated_apr}
-            """,
+            "validation_notes": (
+                f"APR validation {'passed' if is_valid else 'failed'}. "
+                f"Expected: {expected_effective_apr}, "
+                f"Calculated: {calculated_apr}"
+            ),
         }
 
         return func.HttpResponse(
