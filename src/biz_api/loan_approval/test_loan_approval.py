@@ -5,15 +5,15 @@ Runs test cases using the sample JSON files
 """
 
 import json
-import sys
 import os
+import sys
 from pathlib import Path
 
 # Add parent directory to path to import modules
 sys.path.insert(0, str(Path(__file__).parent))
 
+from models import ApplicantFinancials, LoanApplication
 from services import LoanApprovalService
-from models import LoanApplication, ApplicantFinancials
 
 
 def load_test_case(input_file, output_file):

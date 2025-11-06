@@ -1,8 +1,9 @@
-from fastmcp import FastMCP
 import logging
 from typing import Annotated
+
+from fastmcp import FastMCP
+from models import ApplicantFinancials, LoanApplication
 from services import LoanApprovalService
-from models import LoanApplication, ApplicantFinancials
 
 logger = logging.getLogger(__name__)
 loan_approval_service = LoanApprovalService()

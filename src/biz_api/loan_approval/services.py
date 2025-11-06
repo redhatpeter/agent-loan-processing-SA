@@ -1,6 +1,8 @@
-from typing import Optional
-from models import LoanApplication, LoanDecision, LoanDecisionStatus, ApplicantFinancials
 import logging
+from typing import Optional
+
+from models import (ApplicantFinancials, LoanApplication, LoanDecision,
+                    LoanDecisionStatus)
 
 logger = logging.getLogger(__name__)
 
