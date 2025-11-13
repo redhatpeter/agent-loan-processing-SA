@@ -14,10 +14,145 @@ loan_approval_service = LoanApprovalService()
 app = func.FunctionApp()
 
 
+@app.function_name(name="loan_approval_metadata")
+@app.route(route="mcp/loan_approval_metadata", methods=["GET"])
+async def loan_approval_metadata(req: func.HttpRequest) -> func.HttpResponse:
+    """
+    Return metadata information about the Loan Approval MCP API.
+
+    This Azure Function provides metadata about the Loan Approval API,
+    including available tools, their descriptions, and input/output schemas.
+
+    Args:
+        req (func.HttpRequest): HTTP GET request.
+
+    Returns:
+        func.HttpResponse: JSON response containing metadata information
+        about the Loan Approval MCP API.
+
+    Status codes: 200 (success), 500 (error).
+
+    Raises:
+        Returns HTTP 500 response for exceptions including:
+        - Errors in generating metadata.
+    """
+
+    logger.info("--- LOAN APPROVAL METADATA START ---")
+    try:
+        metadata = {
+            "name": "Loan Approval MCP API",
+            "version": "0.0.1-beta",
+            "description": (
+                "Provides tools for loan approval processing based on applicant "
+                "financials."
+            ),
+            "auth": {
+                "type": "connection",
+                "connection_name": "function-app-api-key",
+                "header": "x-functions-key",
+                "description": (
+                    "Uses the stored Azure AI Foundry connection "
+                    "'function-app-api-key' to authenticate requests with the "
+                    "x-functions-key header."
+                ),
+            },
+            "tools": [
+                {
+                    "name": "calculateDTI",
+                    "description": (
+                        "Calculate debt-to-income ratio from financial information."
+                    ),
+                    "endpoint": "/api/tools/calculate_dti_tool",
+                    "method": "POST",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "grossMonthlyIncome": {
+                                "type": "number",
+                                "description": ("Gross monthly income in dollars."),
+                            },
+                            "monthlyDebtPayments": {
+                                "type": "number",
+                                "description": (
+                                    "Total monthly debt payments in dollars."
+                                ),
+                            },
+                        },
+                        "required": ["grossMonthlyIncome", "monthlyDebtPayments"],
+                    },
+                    "returns": {
+                        "type": "object",
+                        "properties": {
+                            "dti": {
+                                "type": "number",
+                                "description": (
+                                    "Calculated debt-to-income ratio percentage."
+                                ),
+                            },
+                            "grossMonthlyIncome": {"type": "number"},
+                            "monthlyDebtPayments": {"type": "number"},
+                        },
+                    },
+                },
+                {
+                    "name": "evaluateLoanApplication",
+                    "description": (
+                        "Evaluate loan application and return approval decision "
+                        "based on DTI."
+                    ),
+                    "endpoint": "/api/tools/evaluate_loan_application_tool",
+                    "method": "POST",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {
+                            "studentNumber": {"type": "string"},
+                            "applicantName": {"type": "string"},
+                            "loanAmount": {"type": "number"},
+                            "grossMonthlyIncome": {"type": "number"},
+                            "monthlyDebtPayments": {"type": "number"},
+                            "dti": {
+                                "type": "number",
+                                "description": ("Optional pre-calculated DTI value."),
+                                "nullable": True,
+                            },
+                        },
+                        "required": [
+                            "studentNumber",
+                            "applicantName",
+                            "loanAmount",
+                            "grossMonthlyIncome",
+                            "monthlyDebtPayments",
+                        ],
+                    },
+                    "returns": {
+                        "type": "object",
+                        "properties": {
+                            "decision": {
+                                "type": "object",
+                                "description": (
+                                    "Loan approval decision including approval "
+                                    "status and APR."
+                                ),
+                            }
+                        },
+                    },
+                },
+            ],
+        }
+
+        logger.info("--- LOAN APPROVAL METADATA SUCCESSFUL ---")
+        return func.HttpResponse(
+            json.dumps(metadata), mimetype="application/json", status_code=200
+        )
+    except Exception as e:
+        logger.error("--- LOAN APPROVAL METADATA ERROR ---")
+        logger.error(f"Error in loan approval metadata: {e}")
+        return func.HttpResponse(f"Error: {e}", status_code=500)
+
+
 @app.function_name(name="apr_tool")
 @app.route(route="tools/apr_tool", methods=["POST"])
 async def apr_tool(req: func.HttpRequest) -> func.HttpResponse:
-    logger.info("--- APR TOOL START ---")
     """
     Calculate loan APR based on financial parameters.
 
@@ -56,8 +191,9 @@ async def apr_tool(req: func.HttpRequest) -> func.HttpResponse:
         - Final markup: +0.1% for effective APR.
     """
 
+    logger.info("--- APR TOOL START ---")
     try:
-        data = req.get_json()
+        data = await req.get_json()
         logger.debug(f"APR TOOL - Request data: {data}")
         loan_amount = float(data.get("loan_amount"))
         base_rate = float(data.get("base_rate"))
@@ -105,7 +241,6 @@ async def apr_tool(req: func.HttpRequest) -> func.HttpResponse:
 @app.function_name(name="validation_tool")
 @app.route(route="tools/validation_tool", methods=["POST"])
 async def loan_validation_tool(req: func.HttpRequest) -> func.HttpResponse:
-    logger.info("--- VALIDATION TOOL START ---")
     """
     Validate loan APR calculations by recalculating and comparing against provided values.
 
@@ -144,9 +279,9 @@ async def loan_validation_tool(req: func.HttpRequest) -> func.HttpResponse:
         Uses identical calculation logic as apr_tool including credit score adjustments,
         DTI adjustments, loan amount tiers, and 0.1% effective APR markup.
     """
-
+    logger.info("--- VALIDATION TOOL START ---")
     try:
-        data = req.get_json()
+        data = await req.get_json()
         logger.debug(f"VALIDATION TOOL - Request data: {data}")
 
         # Extract validation parameters
@@ -205,7 +340,6 @@ async def loan_validation_tool(req: func.HttpRequest) -> func.HttpResponse:
 @app.function_name(name="compliance_tool")
 @app.route(route="tools/compliance_tool", methods=["POST"])
 async def compliance_tool(req: func.HttpRequest) -> func.HttpResponse:
-    logger.info("--- COMPLIANCE TOOL START ---")
     """
     Validates loan compliance based on APR (Annual Percentage Rate) thresholds.
 
@@ -239,9 +373,9 @@ async def compliance_tool(req: func.HttpRequest) -> func.HttpResponse:
         This implementation uses simplified rules for demonstration purposes.
         Production systems should implement comprehensive regulatory compliance checks.
     """
-
+    logger.info("--- COMPLIANCE TOOL START ---")
     try:
-        data = req.get_json()
+        data = await req.get_json()
         logger.debug(f"COMPLIANCE TOOL - Request data: {data}")
         apr = float(data.get("effective_apr"))
 
@@ -272,7 +406,6 @@ async def compliance_tool(req: func.HttpRequest) -> func.HttpResponse:
 @app.function_name(name="amortization_tool")
 @app.route(route="tools/amortization_tool", methods=["POST"])
 async def amortization_tool(req: func.HttpRequest) -> func.HttpResponse:
-    logger.info("--- AMORTIZATION TOOL START ---")
     """
     Calculate loan amortization schedule and payment details.
 
@@ -308,9 +441,9 @@ async def amortization_tool(req: func.HttpRequest) -> func.HttpResponse:
             "effective_apr": 3.5,
             "term_years": 30.
     """
-
+    logger.info("--- AMORTIZATION TOOL START ---")
     try:
-        data = req.get_json()
+        data = await req.get_json()
         logger.debug(f"AMORTIZATION TOOL - Request data: {data}")
         loan_amount = float(data["loan_amount"])
         rate = float(data["effective_apr"])
@@ -352,7 +485,6 @@ async def amortization_tool(req: func.HttpRequest) -> func.HttpResponse:
 @app.function_name(name="calculate_dti_tool")
 @app.route(route="tools/calculate_dti_tool", methods=["POST"])
 async def calculate_dti_tool(req: func.HttpRequest) -> func.HttpResponse:
-    logger.info("--- CALCULATE DTI TOOL START ---")
     """
     Calculate debt-to-income ratio (DTI) as a percentage.
 
@@ -380,9 +512,9 @@ async def calculate_dti_tool(req: func.HttpRequest) -> func.HttpResponse:
     Formula:
         DTI = (monthly_debt_payments / gross_monthly_income) * 100.
     """
-
+    logger.info("--- CALCULATE DTI TOOL START ---")
     try:
-        data = req.get_json()
+        data = await req.get_json()
         logger.debug(f"CALCULATE DTI TOOL - Request data: {data}")
         gross_monthly_income = float(data.get("grossMonthlyIncome"))
         monthly_debt_payments = float(data.get("monthlyDebtPayments"))
@@ -419,7 +551,6 @@ async def calculate_dti_tool(req: func.HttpRequest) -> func.HttpResponse:
 @app.function_name(name="evaluate_loan_application_tool")
 @app.route(route="tools/evaluate_loan_application_tool", methods=["POST"])
 async def evaluate_loan_application_tool(req: func.HttpRequest) -> func.HttpResponse:
-    logger.info("--- EVALUATE LOAN APPLICATION TOOL START ---")
     """
     Evaluate loan application using DTI-based business rules.
 
@@ -452,9 +583,9 @@ async def evaluate_loan_application_tool(req: func.HttpRequest) -> func.HttpResp
         - 40% ≤ DTI ≤ 45%: Approve at 7.5% APR.
         - DTI < 40%: Approve at 5.5% APR.
     """
-
+    logger.info("--- EVALUATE LOAN APPLICATION TOOL START ---")
     try:
-        data = req.get_json()
+        data = await req.get_json()
         logger.debug(f"EVALUATE LOAN APPLICATION TOOL - Request data: {data}")
 
         student_number = data.get("studentNumber")
