@@ -4,9 +4,6 @@ param location string = resourceGroup().location
 param resourcePrefix string = 'loanprocessingagents'
 var envResourcePrefix = toLower(resourcePrefix)
 
-@description('Deploy gpt-4o model - set to true if not deployed yet')
-param deployGpt4oModel bool = false
-
 module storageAccount 'br/public:avm/res/storage/storage-account:0.29.0' = {
   name: 'storageAccountDeployment'
   params: {
@@ -96,39 +93,6 @@ module functionApp 'br/public:avm/res/web/site:0.19.4' = {
     tags: {
       Environment: 'Non-Prod'
       Project: 'Loan Processing Agents'
-    }
-  }
-}
-
-
-resource openAi 'Microsoft.CognitiveServices/accounts@2024-10-01' = {
-  name: '${envResourcePrefix}-aoai'
-  location: 'northcentralus'
-  kind: 'OpenAI'
-  sku: {
-    name: 'S0'
-  }
-  properties: {
-    publicNetworkAccess: 'Enabled'
-  }
-  tags: {
-    Environment: 'Non-Prod'
-    Project: 'Loan Processing Agents'
-  }
-}
-
-resource gpt4o 'Microsoft.CognitiveServices/accounts/deployments@2024-10-01' = if (deployGpt4oModel) {
-  parent: openAi
-  name: 'gpt-4o'
-  sku: {
-    name: 'GlobalStandard'
-    capacity: 450
-  }
-  properties: {
-    model: {
-      format: 'OpenAI'
-      name: 'gpt-4o'
-      version: '2024-08-06'
     }
   }
 }
