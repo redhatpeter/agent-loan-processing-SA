@@ -1,0 +1,73 @@
+name: Deploy Azure Infrastructure
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+        inputs:
+            location:
+                description: "Azure region"
+                required: true
+                default: "northcentralus"
+            resourcePrefix:
+                description: "Resource prefix (lowercase recommended)"
+                required: true
+                default: "loanprocessingagents"
+            deployGpt4oModel:
+                description: "Deploy the GPT-4o model?"
+                required: true
+                type: boolean
+                default: false # Set to true for first deployment
+
+permissions:
+    id-token: write
+    contents: read
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            # Checkout repo
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            # Azure Login (OIDC)
+            - name: Login to Azure using OIDC
+              uses: azure/login@v1
+              with:
+                  client-id: ${{ secrets.AZURE_CLIENT_ID }}
+                  tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+                  subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+            # Deploy main.bicep (infra)
+            - name: Deploy Core Infrastructure
+              run: |
+                  az deployment group create \
+                      --resource-group bicep-test-rg \
+                      --template-file infra/services.bicep \
+                      --parameters \
+                          location='${{ github.event.inputs.location }}' \
+                          resourcePrefix='${{ github.event.inputs.resourcePrefix }}' \
+                          deployGpt4oModel='${{ github.event.inputs.deployGpt4oModel }}'
+
+            # Deploy RBAC (rbac.bicep)
+            - name: Deploy RBAC Assignments
+              run: |
+                  az deployment group create \
+                      --resource-group bicep-test-rg \
+                      --template-file infra/rbac.bicep \
+                      --parameters \
+                          location='${{ github.event.inputs.location }}' \
+                          resourcePrefix='${{ github.event.inputs.resourcePrefix }}'
+
+            # Deploy Function App App Settings (functionEnv.bicep)
+            - name: Deploy Function App Settings
+              run: |
+                  az deployment group create \
+                      --resource-group bicep-test-rg \
+                      --template-file infra/functionEnv.bicep \
+                      --parameters \
+                          location='${{ github.event.inputs.location }}' \
+                          resourcePrefix='${{ github.event.inputs.resourcePrefix }}'
