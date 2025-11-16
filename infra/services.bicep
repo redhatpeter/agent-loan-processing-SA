@@ -1,4 +1,5 @@
 // Define the location for all resources
+@description('The Azure region to deploy resources into')
 param location string = 'northcentralus'
 
 // Parameter to control whether the GPT-4o model should be deployed
@@ -125,7 +126,7 @@ resource gpt4o 'Microsoft.CognitiveServices/accounts/deployments@2024-10-01' = i
 module cosmosDb 'br/public:avm/res/document-db/database-account:0.18.0' = {
   name: 'cosmosDbDeployment'
   params: {
-    name: '${envResourcePrefix}-cosmos'
+    name: '${envResourcePrefix}-cdb'
     location: location
     failoverLocations: [
       {
