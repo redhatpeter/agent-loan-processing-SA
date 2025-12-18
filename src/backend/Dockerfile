@@ -1,10 +1,8 @@
-# Use official Python image as base
 FROM python:3.11-slim
 
 # Prevent debconf warnings
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Set work directory
 WORKDIR /app
 
 # Install system dependencies
@@ -15,24 +13,24 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install uv for faster dependency management
 RUN pip install --no-cache-dir uv
 
-# Copy dependency files first (for layer caching)
+# Copy dependency files
 COPY pyproject.toml ./
 
-# Create virtual environment and install dependencies with prerelease support
+# Create venv and install dependencies with prerelease support
 RUN uv venv && \
     . .venv/bin/activate && \
-    uv pip install -e . --prerelease=allow --upgrade
+    uv pip install -e . --prerelease=allow
 
 # Copy application code
-COPY *.py ./
-COPY logging_config.py ./
+COPY app/ ./app/
+COPY applicationinsights.json ./
 
 # Expose port
-EXPOSE 8070
+EXPOSE 8000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-  CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8070/mcp').read()"
+  CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/status').read()"
 
-# Start the app with Python using the virtual environment
-CMD [".venv/bin/python", "main.py"]
+# Run application
+CMD [".venv/bin/uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -18,7 +18,11 @@ async def get_azure_credential_async():
     if settings.PROFILE == 'dev':
         return AioCliCredential()  # CodeQL [SM05139] Okay use of DefaultAzureCredential as it is only used in development
     else:
-        return AioManagedIdentityCredential(client_id=settings.AZURE_CLIENT_ID)
+        # For system-assigned managed identity, don't pass client_id
+        if settings.AZURE_CLIENT_ID and settings.AZURE_CLIENT_ID != "system-managed-identity":
+            return AioManagedIdentityCredential(client_id=settings.AZURE_CLIENT_ID)
+        else:
+            return AioManagedIdentityCredential()
 
 def get_async_azure_credential():
     """
@@ -36,7 +40,11 @@ def get_async_azure_credential():
     if settings.PROFILE == 'dev':
         return AioCliCredential()  # CodeQL [SM05139] Okay use of DefaultAzureCredential as it is only used in development
     else:
-        return AioManagedIdentityCredential(client_id=settings.AZURE_CLIENT_ID)
+        # For system-assigned managed identity, don't pass client_id
+        if settings.AZURE_CLIENT_ID and settings.AZURE_CLIENT_ID != "system-managed-identity":
+            return AioManagedIdentityCredential(client_id=settings.AZURE_CLIENT_ID)
+        else:
+            return AioManagedIdentityCredential()
 
 def get_azure_credential():
     """
@@ -54,4 +62,8 @@ def get_azure_credential():
     if settings.PROFILE == 'dev':
         return AzureCliCredential()  # CodeQL [SM05139] Okay use of DefaultAzureCredential as it is only used in development
     else:
-        return ManagedIdentityCredential(client_id=settings.AZURE_CLIENT_ID)
+        # For system-assigned managed identity, don't pass client_id
+        if settings.AZURE_CLIENT_ID and settings.AZURE_CLIENT_ID != "system-managed-identity":
+            return ManagedIdentityCredential(client_id=settings.AZURE_CLIENT_ID)
+        else:
+            return ManagedIdentityCredential()

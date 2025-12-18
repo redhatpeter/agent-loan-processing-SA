@@ -20,6 +20,8 @@ export default function App() {
   useEffect(() => {
     if (!threadId) return;
 
+    let intervalId: NodeJS.Timeout | null = null;
+
     const pollStatus = async () => {
       try {
         const status = await api.getLoanStatus(threadId);
@@ -27,7 +29,10 @@ export default function App() {
         
         // Stop polling if completed or error
         if (status.currentState === 'completed' || status.currentState === 'error') {
-          clearInterval(intervalId);
+          if (intervalId) {
+            clearInterval(intervalId);
+            intervalId = null;
+          }
         }
       } catch (error) {
         console.error('Failed to fetch loan status:', error);
@@ -38,9 +43,13 @@ export default function App() {
     pollStatus();
 
     // Poll every 2 seconds
-    const intervalId = setInterval(pollStatus, 2000);
+    intervalId = setInterval(pollStatus, 2000);
 
-    return () => clearInterval(intervalId);
+    return () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    };
   }, [threadId]);
 
   return (
