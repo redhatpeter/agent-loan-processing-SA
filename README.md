@@ -4,7 +4,7 @@
 
 **Official repository:** [Azure-Samples/multi-agent-student-loan-processing-SA](https://github.com/Azure-Samples/multi-agent-student-loan-processing-SA)
 
-[Overview](#overview) • [Architecture](#architecture) • [Getting Started](#getting-started) • [Resources](#resources)
+[Overview](#overview) • [How to Interact](#how-to-interact-with-the-agent) • [Multi-Agent Architecture](#multi-agent-architecture-for-student-loan-processing) • [System Architecture](#system-architecture) • [Quick Start](#quick-start) • [Resources](#resources)
 
 ## Overview
 
@@ -37,7 +37,26 @@ This project provides the following features and technical patterns:
 - **Automated validation** with cross-document verification and completeness checks
 - **State management** for tracking loan application workflow progress
 
-## Architecture
+## How to Interact with the Agent
+
+![Student loan application workflow demonstrated in the chat interface](docs/assets/student-loan-process.gif)
+
+Use the chat interface to complete a loan application from initial greeting through the final lending decision:
+
+1. **Greet the agent** and ask about its student loan capabilities.
+2. **Start an application** by telling the agent you are ready to apply.
+3. **Upload the required PDFs**: a loan application and a bank statement. The applicant name must match in both documents.
+4. **Confirm the upload** after verifying that both files appear in the chat.
+5. **Wait for extraction** while GPT-4o reads the documents and returns structured application data.
+6. **Review and confirm the extracted data** before the agent starts the loan evaluation.
+7. **Receive the decision**, including approval status, debt-to-income ratio, interest rate when approved, and an explanation.
+8. **End the session or begin another application** from the same chat experience.
+
+_The animated walkthrough is sourced from the [Azure Samples solution accelerator](https://github.com/Azure-Samples/multi-agent-student-loan-processing-SA)._
+
+## Multi-Agent Architecture for Student Loan Processing
+
+![Multi-agent workflow for student loan processing](docs/assets/multi-agent-architecture.png)
 
 The student loan processing assistant is designed as a **conversational multi-agent system** with each agent specializing in a specific functional domain (e.g., document extraction, validation, loan approval). The architecture consists of the following key components:
 
@@ -74,6 +93,20 @@ A React-based single-page application providing the user interface for the chat 
 Backend systems exposed as MCP (Model Context Protocol) endpoints to provide business logic and data operations.
 
 - **Loan Approval MCP Service**: Provides loan decision-making capabilities including DTI ratio calculation, credit profile evaluation, interest rate determination, and monthly payment calculation. This service implements the core business rules for approving or denying student loan applications based on financial criteria (DTI < 40% for approval).
+
+The supervisor coordinates the specialized agents, maintains the workflow state, and routes validated application data to the MCP business tools for a deterministic lending decision.
+
+## System Architecture
+
+![Three-tier system architecture for the student loan processing solution](docs/assets/system-architecture.png)
+
+The solution uses a three-tier architecture:
+
+- **Frontend (React + Vite)** provides streaming chat, PDF upload, and workflow status.
+- **Backend (FastAPI + Microsoft Agent Framework)** orchestrates intent classification, document extraction, validation, general chat, and loan-decision agents.
+- **Business API (FastMCP)** exposes debt-to-income, credit-profile, interest-rate, and payment calculations as MCP tools.
+
+Requests flow from the frontend to the backend orchestrator. The orchestrator invokes specialized agents and Azure services, then calls the MCP business API for loan calculations before streaming the result back to the user.
 
 ### Typical User Journey
 
