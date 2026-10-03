@@ -2,9 +2,9 @@
 
 ⭐ If you like this sample, star it on GitHub — it helps a lot!
 
-[Overview](#overview) • [Architecture](#architecture) • [Getting Started](#getting-started) • [Resources](#resources)
+**Official repository:** [Azure-Samples/multi-agent-student-loan-processing-SA](https://github.com/Azure-Samples/multi-agent-student-loan-processing-SA)
 
-![Student Loan Processing Demo](docs/assets/demo.gif)
+[Overview](#overview) • [Architecture](#architecture) • [Getting Started](#getting-started) • [Resources](#resources)
 
 ## Overview
 
@@ -38,8 +38,6 @@ This project provides the following features and technical patterns:
 - **State management** for tracking loan application workflow progress
 
 ## Architecture
-
-![Architecture Diagram](docs/assets/architecture.png)
 
 The student loan processing assistant is designed as a **conversational multi-agent system** with each agent specializing in a specific functional domain (e.g., document extraction, validation, loan approval). The architecture consists of the following key components:
 
@@ -202,13 +200,23 @@ Agent-Loan-Processing/
 - **Python 3.11+** with conda/venv
 - **Node.js 18+** and npm
 - **Azure OpenAI** account with GPT-4o deployment
-- **Azure Blob Storage** account
+- **Azure Blob Storage** account (e.g. `agentloanprocessing2025`)
+
+  > ⚠️ **Required storage account settings for local testing** — verify these in the Azure Portal under your storage account:
+  >
+  > | Setting | Required value |
+  > |---|---|
+  > | Public network access | **Enabled from all networks** (Networking → Public access) |
+  > | Allow Blob anonymous access | **Enabled** (Configuration) |
+  > | Allow storage account key access | **Enabled** (Configuration) |
+  >
+  > Without these settings the app will receive `AuthorizationFailure` errors when uploading documents.
 
 ### Installation
 
 1. **Clone the repository**:
 ```bash
-git clone https://github.com/redhatpeter/agentic-loan-processing.git
+git clone https://github.com/Azure-Samples/multi-agent-student-loan-processing-SA.git
 cd Agent-Loan-Processing
 ```
 
@@ -231,12 +239,12 @@ AZURE_STORAGE_CONTAINER_NAME=loan-documents
 $env:PROFILE="dev"
 
 # Linux/Mac
-export PROFILE=dev
+export PROFILE="dev"
 ```
 
 ### Running the Application
 
-#### 1. Start Backend Server (Port 8000)
+#### 1. Start Backend Server (Port 8001)
 
 **Backend Setup**
 
@@ -273,9 +281,8 @@ uv sync --active --prerelease=allow
 
 **Option A: Using uvicorn directly**
 ```powershell
-# Set PROFILE env variable to "dev". This will make the app load .env.dev file instead of .env.
-$env:PROFILE="dev"
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+# run below command
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8001
 ```
 
 **Option B: Using VS Code debugger**
@@ -283,9 +290,9 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 - Select "FastAPI: DEV Debug Copilot App" from the dropdown
 - Press F5 or click the green play button
 
-Backend will be available at: `http://localhost:8000`
-- API docs: `http://localhost:8000/docs`
-- Health check: `http://localhost:8000/api/status`
+Backend will be available at: `http://localhost:8001`
+- API docs: `http://localhost:8001/docs`
+- Health check: `http://localhost:8001/api/status`
 
 #### 2. Start Business API - MCP Server (Port 8070)
 
@@ -310,13 +317,18 @@ source .venv/Scripts/activate
 uv sync
 
 # Run the MCP Server (FastAPI + MCP)
+# PowerShell
 $env:PROFILE="dev"
+
+# Bash
+export PROFILE="dev"
+
 python main.py
 ```
 
 MCP server will be available at: `http://localhost:8070`
 
-#### 3. Start Frontend (Port 3000)
+#### 3. Start Frontend (Port 5173)
 
 ```bash
 cd src/frontend
@@ -328,7 +340,7 @@ npm install
 npm run dev
 ```
 
-Frontend will be available at: `http://localhost:3000`
+Frontend will be available at: `http://localhost:5173`
 
 ## Guidance
 
@@ -336,7 +348,7 @@ Frontend will be available at: `http://localhost:3000`
 
 Once you have the project cloned locally, you can run all the apps locally. For more details on how to run each app check:
 
-- **[src/backend/README.md](./src/backend/README.md)**: Backend copilot chat service setup
+- **[Backend setup](#1-start-backend-server-port-8001)**: Backend copilot chat service setup
 - **[src/frontend/README.md](./src/frontend/README.md)**: Frontend web app setup  
 - **[src/biz_api/loan_approval/README.md](./src/biz_api/loan_approval/README.md)**: MCP business API server setup
 
@@ -376,7 +388,7 @@ If you have product feedback or errors while building visit:
 
 ## 📚 Documentation
 
-- **[RUNNING.md](./RUNNING.md)**: Detailed setup and running instructions
+- **[Running the application](#running-the-application)**: Detailed setup and running instructions
 - **[src/biz_api/loan_approval/README.md](./src/biz_api/loan_approval/README.md)**: MCP server documentation
 - **[src/biz_api/loan_approval/DTI_IMPLEMENTATION.md](./src/biz_api/loan_approval/DTI_IMPLEMENTATION.md)**: DTI calculation logic
 - **[src/frontend/README.md](./src/frontend/README.md)**: Frontend development guide
@@ -387,7 +399,7 @@ If you have product feedback or errors while building visit:
 
 1. **Backend Health Check**:
 ```bash
-curl http://localhost:8000/api/status
+curl http://localhost:8001/api/status
 # Expected: {"status": "healthy", "timestamp": "..."}
 ```
 
@@ -484,7 +496,7 @@ pytest test_loan_approval.py
 
 ## Troubleshooting
 
-If you have any issue when running or deploying this sample, [open an issue](https://github.com/redhatpeter/agentic-loan-processing/issues) in this repository.
+If you have any issue when running or deploying this sample, [open an issue](https://github.com/Azure-Samples/multi-agent-student-loan-processing-SA/issues) in the official repository.
 
 ## Contributing
 

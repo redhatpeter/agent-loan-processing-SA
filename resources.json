@@ -1,0 +1,1292 @@
+[
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/Default-ActivityLogAlerts/providers/Microsoft.Insights/actiongroups/AGOwner",
+    "kind": null,
+    "location": "global",
+    "name": "AGOwner",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "Default-ActivityLogAlerts",
+    "sku": null,
+    "type": "Microsoft.Insights/actiongroups"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/ml-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/fbroai-managed-identity",
+    "kind": null,
+    "location": "eastus",
+    "name": "fbroai-managed-identity",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "ml-rg",
+    "sku": null,
+    "type": "Microsoft.ManagedIdentity/userAssignedIdentities"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/ml-rg/providers/Microsoft.KeyVault/vaults/fbroai-kv2",
+    "kind": null,
+    "location": "eastus",
+    "name": "fbroai-kv2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "ml-rg",
+    "sku": null,
+    "type": "Microsoft.KeyVault/vaults"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/ml-rg/providers/Microsoft.KeyVault/vaults/pl-commonkeyvalut2",
+    "kind": null,
+    "location": "eastus",
+    "name": "pl-commonkeyvalut2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "ml-rg",
+    "sku": null,
+    "type": "Microsoft.KeyVault/vaults"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/ml-rg/providers/Microsoft.CognitiveServices/accounts/common-open-ai2",
+    "kind": "OpenAI",
+    "location": "eastus",
+    "name": "common-open-ai2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "ml-rg",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "S0",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/ml-rg/providers/Microsoft.CognitiveServices/accounts/fine-tuning992",
+    "kind": "OpenAI",
+    "location": "eastus2",
+    "name": "fine-tuning992",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "ml-rg",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "S0",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/ml-rg/providers/Microsoft.CognitiveServices/accounts/fbroai-cogser2",
+    "kind": "CognitiveServices",
+    "location": "eastus",
+    "name": "fbroai-cogser2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "ml-rg",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "S0",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/ml-rg/providers/Microsoft.CognitiveServices/accounts/multiai-services2",
+    "kind": "CognitiveServices",
+    "location": "eastus",
+    "name": "multiai-services2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "ml-rg",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "S0",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/ml-rg/providers/Microsoft.OperationalInsights/workspaces/mldemo6567789100",
+    "kind": null,
+    "location": "eastus",
+    "name": "mldemo6567789100",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "ml-rg",
+    "sku": null,
+    "type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/ml-rg/providers/Microsoft.Storage/storageAccounts/plcommonstorage2",
+    "kind": "StorageV2",
+    "location": "eastus",
+    "name": "plcommonstorage2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "ml-rg",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Standard_LRS",
+      "size": null,
+      "tier": "Standard"
+    },
+    "type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/ml-rg/providers/Microsoft.Insights/components/pl-commom-appInsight",
+    "kind": "web",
+    "location": "eastus",
+    "name": "pl-commom-appInsight",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "ml-rg",
+    "sku": null,
+    "type": "Microsoft.Insights/components"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg_apim/providers/Microsoft.Insights/actiongroups/AGOwner",
+    "kind": null,
+    "location": "global",
+    "name": "AGOwner",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg_apim",
+    "sku": null,
+    "type": "Microsoft.Insights/actiongroups"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg_apim/providers/Microsoft.Web/connections/azureeventgrid",
+    "kind": "V1",
+    "location": "eastus",
+    "name": "azureeventgrid",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg_apim",
+    "sku": null,
+    "type": "Microsoft.Web/connections"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg_apim/providers/Microsoft.Insights/actiongroups/AGManager",
+    "kind": null,
+    "location": "global",
+    "name": "AGManager",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg_apim",
+    "sku": null,
+    "type": "Microsoft.Insights/actiongroups"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg_apim/providers/Microsoft.ApiManagement/service/apimopenai992",
+    "kind": null,
+    "location": "eastus",
+    "name": "apimopenai992",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg_apim",
+    "sku": {
+      "capacity": 1,
+      "family": null,
+      "model": null,
+      "name": "Developer",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.ApiManagement/service"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/secrets-rg/providers/Microsoft.KeyVault/vaults/merchiq-secrets-kv2",
+    "kind": null,
+    "location": "westus3",
+    "name": "merchiq-secrets-kv2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "secrets-rg",
+    "sku": null,
+    "type": "Microsoft.KeyVault/vaults"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.Storage/storageAccounts/z6h2xyyejopbosa2",
+    "kind": "StorageV2",
+    "location": "westus3",
+    "name": "z6h2xyyejopbosa2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Standard_LRS",
+      "size": null,
+      "tier": "Standard"
+    },
+    "type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.OperationalInsights/workspaces/z6h2xyyejopbo-cosu-la",
+    "kind": null,
+    "location": "westus3",
+    "name": "z6h2xyyejopbo-cosu-la",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": null,
+    "type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.Storage/storageAccounts/westus3storageaccount2",
+    "kind": "StorageV2",
+    "location": "westus3",
+    "name": "westus3storageaccount2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Standard_LRS",
+      "size": null,
+      "tier": "Standard"
+    },
+    "type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.CognitiveServices/accounts/fromlocalmachinetofoundry-resource2",
+    "kind": "AIServices",
+    "location": "westus3",
+    "name": "fromlocalmachinetofoundry-resource2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "S0",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.CognitiveServices/accounts/aif-z6h2xyyejopbo2",
+    "kind": "AIServices",
+    "location": "westus3",
+    "name": "aif-z6h2xyyejopbo2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "S0",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.CognitiveServices/accounts/admin-mkv3sbv2-swedencentral2",
+    "kind": "AIServices",
+    "location": "swedencentral",
+    "name": "admin-mkv3sbv2-swedencentral2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "S0",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.CognitiveServices/accounts/general-ai-projects-resource2",
+    "kind": "AIServices",
+    "location": "westus3",
+    "name": "general-ai-projects-resource2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "S0",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.CognitiveServices/accounts/content-safety-general-ai2",
+    "kind": "ContentSafety",
+    "location": "westus",
+    "name": "content-safety-general-ai2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "S0",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.Web/serverFarms/z6h2xyyejopbo-cosu-asp",
+    "kind": "linux",
+    "location": "westus3",
+    "name": "z6h2xyyejopbo-cosu-asp",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": {
+      "capacity": 1,
+      "family": "F",
+      "model": null,
+      "name": "F1",
+      "size": "F1",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.CognitiveServices/accounts/sora-image2",
+    "kind": "AIServices",
+    "location": "eastus2",
+    "name": "sora-image2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "S0",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.ContainerRegistry/registries/z6h2xyyejopbocosureg2",
+    "kind": null,
+    "location": "westus3",
+    "name": "z6h2xyyejopbocosureg2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Standard",
+      "size": null,
+      "tier": "Standard"
+    },
+    "type": "Microsoft.ContainerRegistry/registries"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.CognitiveServices/accounts/sora-image2/projects/proj-sora-project",
+    "kind": "AIServices",
+    "location": "eastus2",
+    "name": "sora-image2/proj-sora-project",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": null,
+    "type": "Microsoft.CognitiveServices/accounts/projects"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.CognitiveServices/accounts/fromlocalmachinetofoundry-resource2/projects/fromLocalMachineToFoundry",
+    "kind": "AIServices",
+    "location": "westus3",
+    "name": "fromlocalmachinetofoundry-resource2/fromLocalMachineToFoundry",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": null,
+    "type": "Microsoft.CognitiveServices/accounts/projects"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.CognitiveServices/accounts/aif-z6h2xyyejopbo2/projects/proj-z6h2xyyejopbo",
+    "kind": "AIServices",
+    "location": "westus3",
+    "name": "aif-z6h2xyyejopbo2/proj-z6h2xyyejopbo",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": null,
+    "type": "Microsoft.CognitiveServices/accounts/projects"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.Insights/components/rg-general-ai-app-insight",
+    "kind": "web",
+    "location": "westus3",
+    "name": "rg-general-ai-app-insight",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": null,
+    "type": "Microsoft.Insights/components"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.Insights/components/z6h2xyyejopbo-cosu-ai",
+    "kind": "web",
+    "location": "westus3",
+    "name": "z6h2xyyejopbo-cosu-ai",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": null,
+    "type": "Microsoft.Insights/components"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.CognitiveServices/accounts/general-ai-projects-resource2/projects/general-ai-projects",
+    "kind": "AIServices",
+    "location": "westus3",
+    "name": "general-ai-projects-resource2/general-ai-projects",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": null,
+    "type": "Microsoft.CognitiveServices/accounts/projects"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.CognitiveServices/accounts/admin-mkv3sbv2-swedencentral2/projects/admin-mkv3sbv2-swedencentral_project",
+    "kind": "AIServices",
+    "location": "swedencentral",
+    "name": "admin-mkv3sbv2-swedencentral2/admin-mkv3sbv2-swedencentral_project",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": null,
+    "type": "Microsoft.CognitiveServices/accounts/projects"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.Web/sites/z6h2xyyejopbo-app2",
+    "kind": "app,linux,container",
+    "location": "westus3",
+    "name": "z6h2xyyejopbo-app2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": null,
+    "type": "Microsoft.Web/sites"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.ApiManagement/service/ai-gateway-general2",
+    "kind": null,
+    "location": "westus",
+    "name": "ai-gateway-general2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": {
+      "capacity": 1,
+      "family": null,
+      "model": null,
+      "name": "BasicV2",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.ApiManagement/service"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-demo-dev-westus3-001/providers/Microsoft.OperationalInsights/workspaces/law-demo-dev-westus3-001",
+    "kind": null,
+    "location": "westus3",
+    "name": "law-demo-dev-westus3-001",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-demo-dev-westus3-001",
+    "sku": null,
+    "type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/agent-loan-processing/providers/Microsoft.OperationalInsights/workspaces/law-agent-loan-processing",
+    "kind": null,
+    "location": "westus3",
+    "name": "law-agent-loan-processing",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "agent-loan-processing",
+    "sku": null,
+    "type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/agent-loan-processing/providers/Microsoft.Storage/storageAccounts/agentloanprocessing20252",
+    "kind": "StorageV2",
+    "location": "westus3",
+    "name": "agentloanprocessing20252",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "agent-loan-processing",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Standard_LRS",
+      "size": null,
+      "tier": "Standard"
+    },
+    "type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/agent-loan-processing/providers/Microsoft.Insights/components/app-i-agent-loan-processsing-",
+    "kind": "web",
+    "location": "westus3",
+    "name": "app-i-agent-loan-processsing-",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "agent-loan-processing",
+    "sku": null,
+    "type": "Microsoft.Insights/components"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.Search/searchServices/ai102srch193837986-mig",
+    "kind": null,
+    "location": "eastus",
+    "name": "ai102srch193837986-mig",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "basic",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.Search/searchServices"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.Storage/storageAccounts/ai102str193837986mig",
+    "kind": "StorageV2",
+    "location": "eastus",
+    "name": "ai102str193837986mig",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Standard_LRS",
+      "size": null,
+      "tier": "Standard"
+    },
+    "type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-general-ai/providers/Microsoft.BotService/botServices/uploadfileagforcx86804",
+    "kind": "azurebot",
+    "location": "global",
+    "name": "uploadfileagforcx86804",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-general-ai",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "S1",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.BotService/botServices"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.KeyVault/vaults/prod-merchiq-kv2",
+    "kind": null,
+    "location": "northcentralus",
+    "name": "prod-merchiq-kv2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": null,
+    "type": "Microsoft.KeyVault/vaults"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/prod-merchiq-aoai-mi",
+    "kind": null,
+    "location": "northcentralus",
+    "name": "prod-merchiq-aoai-mi",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": null,
+    "type": "Microsoft.ManagedIdentity/userAssignedIdentities"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/prod-merchiq-cleanup-mi",
+    "kind": null,
+    "location": "northcentralus",
+    "name": "prod-merchiq-cleanup-mi",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": null,
+    "type": "Microsoft.ManagedIdentity/userAssignedIdentities"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.OperationalInsights/workspaces/prod-merchiq-law",
+    "kind": null,
+    "location": "northcentralus",
+    "name": "prod-merchiq-law",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": null,
+    "type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.Automation/automationAccounts/aa-prod-merchiq-rg-db-watchdog",
+    "kind": null,
+    "location": "northcentralus",
+    "name": "aa-prod-merchiq-rg-db-watchdog",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": null,
+    "type": "Microsoft.Automation/automationAccounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.Insights/components/prod-merchiq-ai",
+    "kind": "web",
+    "location": "northcentralus",
+    "name": "prod-merchiq-ai",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": null,
+    "type": "Microsoft.Insights/components"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.App/managedEnvironments/prod-merchiq-aca-env",
+    "kind": null,
+    "location": "northcentralus",
+    "name": "prod-merchiq-aca-env",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": null,
+    "type": "Microsoft.App/managedEnvironments"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/microsoft.insights/actiongroups/Application Insights Smart Detection",
+    "kind": null,
+    "location": "global",
+    "name": "Application Insights Smart Detection",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": null,
+    "type": "microsoft.insights/actiongroups"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.ContainerRegistry/registries/prodmerchiqacr",
+    "kind": null,
+    "location": "northcentralus",
+    "name": "prodmerchiqacr",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Basic",
+      "size": null,
+      "tier": "Basic"
+    },
+    "type": "Microsoft.ContainerRegistry/registries"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.DBforPostgreSQL/flexibleServers/prod-merchiq-pg-pmiqprod1",
+    "kind": null,
+    "location": "northcentralus",
+    "name": "prod-merchiq-pg-pmiqprod1",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Standard_B2ms",
+      "size": null,
+      "tier": "Burstable"
+    },
+    "type": "Microsoft.DBforPostgreSQL/flexibleServers"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.Communication/EmailServices/prod-merchiq-email-pmiqprod1",
+    "kind": null,
+    "location": "global",
+    "name": "prod-merchiq-email-pmiqprod1",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": null,
+    "type": "Microsoft.Communication/EmailServices"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.Communication/EmailServices/prod-merchiq-email-pmiqprod1/Domains/AzureManagedDomain",
+    "kind": null,
+    "location": "global",
+    "name": "prod-merchiq-email-pmiqprod1/AzureManagedDomain",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": null,
+    "type": "Microsoft.Communication/EmailServices/Domains"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.Communication/CommunicationServices/prod-merchiq-commservice-pmiqprod1",
+    "kind": null,
+    "location": "global",
+    "name": "prod-merchiq-commservice-pmiqprod1",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": null,
+    "type": "Microsoft.Communication/CommunicationServices"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.Cache/redisEnterprise/prod-merchiq-redis-pmiqprod1",
+    "kind": "v2",
+    "location": "northcentralus",
+    "name": "prod-merchiq-redis-pmiqprod1",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Balanced_B0",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.Cache/redisEnterprise"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.App/containerApps/prod-merchiq-keycloak",
+    "kind": null,
+    "location": "northcentralus",
+    "name": "prod-merchiq-keycloak",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": null,
+    "type": "Microsoft.App/containerApps"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.App/jobs/prod-merchiq-cleanup",
+    "kind": null,
+    "location": "northcentralus",
+    "name": "prod-merchiq-cleanup",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": null,
+    "type": "Microsoft.App/jobs"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.App/jobs/prod-merchiq-migrate",
+    "kind": null,
+    "location": "northcentralus",
+    "name": "prod-merchiq-migrate",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": null,
+    "type": "Microsoft.App/jobs"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.App/containerApps/prod-merchiq-backend",
+    "kind": null,
+    "location": "northcentralus",
+    "name": "prod-merchiq-backend",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": null,
+    "type": "Microsoft.App/containerApps"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.App/containerApps/prod-merchiq-voice-bridge",
+    "kind": null,
+    "location": "northcentralus",
+    "name": "prod-merchiq-voice-bridge",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": null,
+    "type": "Microsoft.App/containerApps"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.Cdn/profiles/prod-merchiq-afd",
+    "kind": "frontdoor",
+    "location": "global",
+    "name": "prod-merchiq-afd",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Standard_AzureFrontDoor",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.Cdn/profiles"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.Cdn/profiles/prod-merchiq-afd/afdendpoints/prod-merchiq-afd-endpoint",
+    "kind": null,
+    "location": "global",
+    "name": "prod-merchiq-afd/prod-merchiq-afd-endpoint",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": null,
+    "type": "Microsoft.Cdn/profiles/afdendpoints"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.Network/frontdoorWebApplicationFirewallPolicies/prodmerchiqafdwaf",
+    "kind": null,
+    "location": "global",
+    "name": "prodmerchiqafdwaf",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Standard_AzureFrontDoor",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.Network/frontdoorWebApplicationFirewallPolicies"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.CognitiveServices/accounts/prod-merchiq-aoai-pmiqprod1",
+    "kind": "AIServices",
+    "location": "centralus",
+    "name": "prod-merchiq-aoai-pmiqprod1",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "S0",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/prod-merchiq-rg/providers/Microsoft.CognitiveServices/accounts/prod-merchiq-aoai-eus2-pmiqprod1",
+    "kind": "AIServices",
+    "location": "eastus2",
+    "name": "prod-merchiq-aoai-eus2-pmiqprod1",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "prod-merchiq-rg",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "S0",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.CognitiveServices/accounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-merchiq-preview/providers/Microsoft.Storage/storageAccounts/merchiqpreview2",
+    "kind": "StorageV2",
+    "location": "eastus2",
+    "name": "merchiqpreview2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-merchiq-preview",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Standard_LRS",
+      "size": null,
+      "tier": "Standard"
+    },
+    "type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-merchiq-preview/providers/Microsoft.Communication/EmailServices/dev-merchiq-emailservice",
+    "kind": null,
+    "location": "global",
+    "name": "dev-merchiq-emailservice",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-merchiq-preview",
+    "sku": null,
+    "type": "Microsoft.Communication/EmailServices"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/merchiq-widget-test-rg/providers/Microsoft.Storage/storageAccounts/merchiqwidgettest2",
+    "kind": "StorageV2",
+    "location": "eastus2",
+    "name": "merchiqwidgettest2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "merchiq-widget-test-rg",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Standard_LRS",
+      "size": null,
+      "tier": "Standard"
+    },
+    "type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-merchiq-preview/providers/Microsoft.Communication/EmailServices/dev-merchiq-emailservice/Domains/AzureManagedDomain",
+    "kind": null,
+    "location": "global",
+    "name": "dev-merchiq-emailservice/AzureManagedDomain",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-merchiq-preview",
+    "sku": null,
+    "type": "Microsoft.Communication/EmailServices/Domains"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-merchiq-preview/providers/Microsoft.Communication/CommunicationServices/dev-merchiq-commservice2",
+    "kind": null,
+    "location": "global",
+    "name": "dev-merchiq-commservice2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-merchiq-preview",
+    "sku": null,
+    "type": "Microsoft.Communication/CommunicationServices"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/cosmos-ws/providers/Microsoft.ServiceBus/namespaces/integration-sb-uku63occhzdja2",
+    "kind": null,
+    "location": "westus",
+    "name": "integration-sb-uku63occhzdja2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "cosmos-ws",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Standard",
+      "size": null,
+      "tier": "Standard"
+    },
+    "type": "Microsoft.ServiceBus/namespaces"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/cosmos-ws/providers/Microsoft.ManagedIdentity/userAssignedIdentities/logic-integ-demo-identity",
+    "kind": null,
+    "location": "westus3",
+    "name": "logic-integ-demo-identity",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "cosmos-ws",
+    "sku": null,
+    "type": "Microsoft.ManagedIdentity/userAssignedIdentities"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/cosmos-ws/providers/Microsoft.Storage/storageAccounts/cogvaazfunctions2",
+    "kind": "StorageV2",
+    "location": "westus",
+    "name": "cogvaazfunctions2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "cosmos-ws",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Standard_LRS",
+      "size": null,
+      "tier": "Standard"
+    },
+    "type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/cosmos-ws/providers/Microsoft.DocumentDB/databaseAccounts/cosmoslab826582",
+    "kind": "GlobalDocumentDB",
+    "location": "westus",
+    "name": "cosmoslab826582",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "cosmos-ws",
+    "sku": null,
+    "type": "Microsoft.DocumentDB/databaseAccounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/cosmos-ws/providers/Microsoft.ManagedIdentity/userAssignedIdentities/func-integ-demo-identity",
+    "kind": null,
+    "location": "westus",
+    "name": "func-integ-demo-identity",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "cosmos-ws",
+    "sku": null,
+    "type": "Microsoft.ManagedIdentity/userAssignedIdentities"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/cosmos-ws/providers/Microsoft.Storage/storageAccounts/cogvalogicapp2",
+    "kind": "StorageV2",
+    "location": "westus3",
+    "name": "cogvalogicapp2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "cosmos-ws",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Standard_LRS",
+      "size": null,
+      "tier": "Standard"
+    },
+    "type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/cosmos-ws/providers/Microsoft.Web/serverFarms/func-integ-demo",
+    "kind": "functionapp",
+    "location": "westus",
+    "name": "func-integ-demo",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "cosmos-ws",
+    "sku": {
+      "capacity": 0,
+      "family": "FC",
+      "model": null,
+      "name": "FC1",
+      "size": "FC1",
+      "tier": "FlexConsumption"
+    },
+    "type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/cosmos-ws/providers/Microsoft.OperationalInsights/workspaces/integ-demo-law",
+    "kind": null,
+    "location": "westus3",
+    "name": "integ-demo-law",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "cosmos-ws",
+    "sku": null,
+    "type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/cosmos-ws/providers/Microsoft.Web/serverFarms/logic-integ-demo",
+    "kind": "elastic",
+    "location": "westus3",
+    "name": "logic-integ-demo",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "cosmos-ws",
+    "sku": {
+      "capacity": 1,
+      "family": "WS",
+      "model": null,
+      "name": "WS1",
+      "size": "WS1",
+      "tier": "WorkflowStandard"
+    },
+    "type": "Microsoft.Web/serverFarms"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/cosmos-ws/providers/Microsoft.DurableTask/schedulers/duableTaskScheduler",
+    "kind": null,
+    "location": "westus",
+    "name": "duableTaskScheduler",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "cosmos-ws",
+    "sku": null,
+    "type": "Microsoft.DurableTask/schedulers"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/cosmos-ws/providers/Microsoft.Insights/components/func-integ-demo",
+    "kind": "web",
+    "location": "westus",
+    "name": "func-integ-demo",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "cosmos-ws",
+    "sku": null,
+    "type": "Microsoft.Insights/components"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/cosmos-ws/providers/Microsoft.Insights/components/logic-integ-demo",
+    "kind": "web",
+    "location": "westus3",
+    "name": "logic-integ-demo",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "cosmos-ws",
+    "sku": null,
+    "type": "Microsoft.Insights/components"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/cosmos-ws/providers/Microsoft.Web/sites/logic-integ-demo2",
+    "kind": "functionapp,workflowapp",
+    "location": "westus3",
+    "name": "logic-integ-demo2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "cosmos-ws",
+    "sku": null,
+    "type": "Microsoft.Web/sites"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/cosmos-ws/providers/Microsoft.Web/sites/func-integ-demo2",
+    "kind": "functionapp,linux",
+    "location": "westus",
+    "name": "func-integ-demo2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "cosmos-ws",
+    "sku": null,
+    "type": "Microsoft.Web/sites"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-AI200-lab/providers/Microsoft.OperationalInsights/workspaces/log-ai200-ai200lab",
+    "kind": null,
+    "location": "westus",
+    "name": "log-ai200-ai200lab",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-AI200-lab",
+    "sku": null,
+    "type": "Microsoft.OperationalInsights/workspaces"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-AI200-lab/providers/Microsoft.AppConfiguration/configurationStores/appcs-ai200-ai200lab",
+    "kind": null,
+    "location": "westus",
+    "name": "appcs-ai200-ai200lab",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-AI200-lab",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "free",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.AppConfiguration/configurationStores"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-AI200-lab/providers/Microsoft.KeyVault/vaults/kv-ai200-ai200lab",
+    "kind": null,
+    "location": "westus",
+    "name": "kv-ai200-ai200lab",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-AI200-lab",
+    "sku": null,
+    "type": "Microsoft.KeyVault/vaults"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-AI200-lab/providers/Microsoft.Insights/components/appi-ai200-ai200lab",
+    "kind": "web",
+    "location": "westus",
+    "name": "appi-ai200-ai200lab",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-AI200-lab",
+    "sku": null,
+    "type": "Microsoft.Insights/components"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-AI200-lab/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id-ai200-ai200lab",
+    "kind": null,
+    "location": "westus",
+    "name": "id-ai200-ai200lab",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-AI200-lab",
+    "sku": null,
+    "type": "Microsoft.ManagedIdentity/userAssignedIdentities"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-AI200-lab/providers/Microsoft.App/managedEnvironments/cae-ai200-ai200lab",
+    "kind": null,
+    "location": "westus",
+    "name": "cae-ai200-ai200lab",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-AI200-lab",
+    "sku": null,
+    "type": "Microsoft.App/managedEnvironments"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-AI200-lab/providers/Microsoft.ContainerRegistry/registries/acrai200ai200lab",
+    "kind": null,
+    "location": "westus",
+    "name": "acrai200ai200lab",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-AI200-lab",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Basic",
+      "size": null,
+      "tier": "Basic"
+    },
+    "type": "Microsoft.ContainerRegistry/registries"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/rg-AI200-lab/providers/Microsoft.App/containerApps/ca-ai200-api-ai200lab",
+    "kind": null,
+    "location": "westus",
+    "name": "ca-ai200-api-ai200lab",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "rg-AI200-lab",
+    "sku": null,
+    "type": "Microsoft.App/containerApps"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/fabric/providers/Microsoft.Storage/storageAccounts/fabricmigbackup",
+    "kind": "StorageV2",
+    "location": "westus2",
+    "name": "fabricmigbackup",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "fabric",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "Standard_LRS",
+      "size": null,
+      "tier": "Standard"
+    },
+    "type": "Microsoft.Storage/storageAccounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/fabric/providers/Microsoft.Fabric/capacities/adminfabricwestus2",
+    "kind": null,
+    "location": "westus2",
+    "name": "adminfabricwestus2",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "fabric",
+    "sku": {
+      "capacity": null,
+      "family": null,
+      "model": null,
+      "name": "F2",
+      "size": null,
+      "tier": "Fabric"
+    },
+    "type": "Microsoft.Fabric/capacities"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/fabric/providers/Microsoft.PowerPlatform/accounts/CopilotStudioBillingPlan",
+    "kind": null,
+    "location": "unitedstates",
+    "name": "CopilotStudioBillingPlan",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "fabric",
+    "sku": null,
+    "type": "Microsoft.PowerPlatform/accounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/fabric/providers/Microsoft.Purview/accounts/purviewdatadlp",
+    "kind": null,
+    "location": "westus",
+    "name": "purviewdatadlp",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "fabric",
+    "sku": {
+      "capacity": 1,
+      "family": null,
+      "model": null,
+      "name": "Standard",
+      "size": null,
+      "tier": null
+    },
+    "type": "Microsoft.Purview/accounts"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/fabric/providers/Microsoft.Communication/CommunicationServices/acs-dlp-poc",
+    "kind": null,
+    "location": "global",
+    "name": "acs-dlp-poc",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "fabric",
+    "sku": null,
+    "type": "Microsoft.Communication/CommunicationServices"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/fabric/providers/Microsoft.Communication/EmailServices/acs-email-poc",
+    "kind": null,
+    "location": "global",
+    "name": "acs-email-poc",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "fabric",
+    "sku": null,
+    "type": "Microsoft.Communication/EmailServices"
+  },
+  {
+    "id": "/subscriptions/0028ca35-f331-410c-b0d8-f9ea74973a4d/resourceGroups/fabric/providers/Microsoft.Communication/EmailServices/acs-email-poc/Domains/AzureManagedDomain",
+    "kind": null,
+    "location": "global",
+    "name": "acs-email-poc/AzureManagedDomain",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "fabric",
+    "sku": null,
+    "type": "Microsoft.Communication/EmailServices/Domains"
+  }
+]
