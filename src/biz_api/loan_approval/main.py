@@ -1,5 +1,7 @@
 
 import os
+import sys
+import asyncio
 import logging
 from logging_config import configure_logging
 from mcp_tools import mcp
@@ -7,6 +9,11 @@ from mcp_tools import mcp
 logger = logging.getLogger(__name__)
 
 if __name__ == "__main__":
+    # Windows ProactorEventLoop raises WinError 10054 on connection teardown.
+    # SelectorEventLoop handles it cleanly.
+    if sys.platform == "win32":
+        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+
     configure_logging()
     profile = os.environ.get("PROFILE", "prod")
     
