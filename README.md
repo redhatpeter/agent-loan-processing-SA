@@ -4,6 +4,8 @@
 
 **Official repository:** [Azure-Samples/multi-agent-student-loan-processing-SA](https://github.com/Azure-Samples/multi-agent-student-loan-processing-SA)
 
+**Further reading:** [From Questions to Loan Decisions: How Multi-Agent AI and MCP Work Together | Peter Lee](https://redhatpeter.github.io/posts/from-documents-to-decisions-inside-a-multi-agent-student-loan-accelerator/)
+
 [Overview](#overview) • [How to Interact](#how-to-interact-with-the-agent) • [Multi-Agent Architecture](#multi-agent-architecture-for-student-loan-processing) • [System Architecture](#system-architecture) • [Quick Start](#quick-start) • [Resources](#resources)
 
 ## Overview
