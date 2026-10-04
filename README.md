@@ -230,10 +230,15 @@ Agent-Loan-Processing/
 
 ### Prerequisites
 
-- **Python 3.11+** with conda/venv
-- **Node.js 18+** and npm
+- **WSL 2** with Ubuntu (Ubuntu 24.04 is validated)
+- **Python 3.11+**
+- **[uv](https://docs.astral.sh/uv/)** for Python environment and dependency management
+- **Linux-native Node.js 18+** and npm (Node.js 22 is validated)
+- **Azure CLI**, authenticated with `az login`
 - **Azure OpenAI** account with GPT-4o deployment
 - **Azure Blob Storage** account (e.g. `agentloanprocessing2025`)
+
+  > Run `command -v node npm uv` inside WSL before setup. These commands must resolve to Linux paths such as `/usr/bin` or `/home/<user>/.local/bin`, not `/mnt/c/...`.
 
   > ⚠️ **Required storage account settings for local testing** — verify these in the Azure Portal under your storage account:
   >
@@ -247,133 +252,187 @@ Agent-Loan-Processing/
 
 ### Installation
 
-1. **Clone the repository**:
+1. **Clone the repository into the WSL filesystem**:
+
 ```bash
+mkdir -p ~/1.projects
+cd ~/1.projects
 git clone https://github.com/Azure-Samples/multi-agent-student-loan-processing-SA.git
 cd Agent-Loan-Processing
 ```
 
-2. **Set up environment variables**:
-```bash
-# Create .env.dev in project root
-cp .env.example .env.dev
+Avoid placing the project under `/mnt/c`. Keeping the workspace under `/home/<user>` provides faster dependency installation, file watching, and hot reload.
 
-# Edit .env.dev with your Azure credentials:
+2. **Create the backend development configuration**:
+
+Create `src/backend/.env.dev` and add the settings for your Azure resources. This file is ignored by Git and must not be committed.
+
+```bash
+PROFILE=dev
 AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com/
 AZURE_OPENAI_KEY=your-api-key
 AZURE_OPENAI_CHAT_DEPLOYMENT_NAME=gpt-4o
-AZURE_STORAGE_CONNECTION_STRING=your-blob-connection-string
-AZURE_STORAGE_CONTAINER_NAME=loan-documents
+AZURE_STORAGE_ACCOUNT=your-storage-account
+AZURE_STORAGE_CONTAINER=loan-documents
+LOAN_APPROVAL_MCP_URL=http://localhost:8070/mcp
+ENABLE_OTEL=false
 ```
 
-3. **Set PROFILE environment variable**:
-```bash
-# Windows (PowerShell)
-$env:PROFILE="dev"
+Protect the local configuration:
 
-# Linux/Mac
-export PROFILE="dev"
+```bash
+chmod 600 src/backend/.env.dev
+```
+
+3. **Authenticate with Azure**:
+
+```bash
+az login
 ```
 
 ### Running the Application
 
-#### 1. Start Backend Server (Port 8001)
+There are two supported local-development methods:
 
-**Backend Setup**
+1. Use the one-command launcher to start and supervise the complete system.
+2. Start the MCP server, backend, and frontend manually in separate terminals.
 
-1. Navigate to the backend directory:
+The services must start in this order:
+
+```text
+MCP server (8070) → Backend API (8001) → Frontend (5173)
+```
+
+The backend can start before the MCP server, but loan-decision requests will fail when the backend attempts to connect to `http://localhost:8070/mcp`.
+
+#### Method 1: Start Everything with One Script (Recommended)
+
+The repository includes [`scripts/start-dev.sh`](./scripts/start-dev.sh), which starts all three building blocks with their correct working directories, virtual environments, environment values, ports, and readiness checks.
+
+From the repository root, run:
+
 ```bash
+./scripts/start-dev.sh
+```
+
+For the first run—or whenever dependencies change—restore dependencies before startup:
+
+```bash
+./scripts/start-dev.sh --install
+```
+
+Other launcher options:
+
+| Command | Purpose |
+|---|---|
+| `./scripts/start-dev.sh` | Start all services with backend auto-reload |
+| `./scripts/start-dev.sh --install` | Restore both Python environments and frontend packages, then start |
+| `./scripts/start-dev.sh --no-reload` | Start all services without Uvicorn auto-reload |
+| `./scripts/start-dev.sh --help` | Display launcher usage |
+
+The launcher:
+
+- Verifies required commands, environments, dependencies, and `src/backend/.env.dev`
+- Rejects Windows Node.js/npm executables accidentally inherited through `/mnt/c`
+- Fails clearly if ports `8070`, `8001`, or `5173` are already occupied
+- Sets `PROFILE=dev` independently for the MCP server and backend
+- Waits for each service before starting the next building block
+- Prefixes output with `[mcp]`, `[backend]`, or `[frontend]`
+- Monitors all processes and stops the complete system if a critical process exits
+- Gracefully stops all three services when you press `Ctrl+C`
+
+When startup succeeds, the launcher prints:
+
+```bash
+Frontend:    http://localhost:5173
+Backend API: http://localhost:8001
+API docs:    http://localhost:8001/docs
+MCP server:  http://localhost:8070/mcp
+```
+
+#### Method 2: Start Each Building Block Manually
+
+Use this method to debug an individual process or inspect each service in a separate terminal.
+
+##### First-Time Dependency Setup
+
+Run these commands once from the repository root:
+
+```bash
+# Backend environment
 cd src/backend
-```
+uv sync --prerelease=allow
+cd ../..
 
-2. Configure Git LFS (if needed):
-```powershell
-$env:GIT_LFS_SKIP_SMUDGE="1"
-```
-
-3. Install dependencies using uv:
-```bash
-# Install uv if you don't have it
-pip install uv
-
-# Create a virtual environment
-uv venv
-
-# Activate the virtual environment
-# PowerShell
-.\.venv\Scripts\Activate.ps1
-
-# Bash
-source .venv/Scripts/activate
-
-# Install all dependencies
-uv sync --active --prerelease=allow
-```
-
-4. Run the development server:
-
-**Option A: Using uvicorn directly**
-```powershell
-# run below command
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8001
-```
-
-**Option B: Using VS Code debugger**
-- Navigate to Run & Debug in VS Code
-- Select "FastAPI: DEV Debug Copilot App" from the dropdown
-- Press F5 or click the green play button
-
-Backend will be available at: `http://localhost:8001`
-- API docs: `http://localhost:8001/docs`
-- Health check: `http://localhost:8001/api/status`
-
-#### 2. Start Business API - MCP Server (Port 8070)
-
-Install dependencies using uv and run:
-
-```bash
+# MCP server environment
 cd src/biz_api/loan_approval
-
-# Install uv if you don't have it
-pip install uv
-
-# Create a virtual environment
-uv venv
-
-# Activate the virtual environment
-# PowerShell
-.\.venv\Scripts\Activate.ps1
-
-# Bash
-source .venv/Scripts/activate
-# Install all dependencies
 uv sync
+cd ../../..
 
-# Run the MCP Server (FastAPI + MCP)
-# PowerShell
-$env:PROFILE="dev"
-
-# Bash
-export PROFILE="dev"
-
-python main.py
+# Frontend dependencies
+cd src/frontend
+npm ci
+cd ../..
 ```
 
-MCP server will be available at: `http://localhost:8070`
+Each Python project creates and manages its own Linux virtual environment:
 
-#### 3. Start Frontend (Port 5173)
+```text
+src/backend/.venv
+src/biz_api/loan_approval/.venv
+```
+
+Virtual-environment activation is optional because the following commands call each environment's Python executable directly.
+
+##### Terminal 1 — MCP Business API (Port 8070)
 
 ```bash
-cd src/frontend
+cd ~/1.projects/Agent-Loan-Processing/src/biz_api/loan_approval
+PROFILE=dev .venv/bin/python main.py
+```
 
-# Install dependencies (first time only)
-npm install
+Wait until the output confirms that Uvicorn is running on `http://0.0.0.0:8070`.
 
-# Start development server
-npm run dev
+##### Terminal 2 — Backend API (Port 8001)
+
+```bash
+cd ~/1.projects/Agent-Loan-Processing/src/backend
+PROFILE=dev .venv/bin/python -m uvicorn app.main:app \
+  --reload \
+  --host 0.0.0.0 \
+  --port 8001
+```
+
+Verify backend readiness:
+
+```bash
+curl --fail http://localhost:8001/openapi.json > /dev/null
+```
+
+Backend endpoints:
+
+- API base: `http://localhost:8001`
+- Swagger UI: `http://localhost:8001/docs`
+- OpenAPI readiness check: `http://localhost:8001/openapi.json`
+
+##### Terminal 3 — Frontend (Port 5173)
+
+```bash
+cd ~/1.projects/Agent-Loan-Processing/src/frontend
+VITE_API_URL=http://localhost:8001/api npm run dev -- --host 0.0.0.0
 ```
 
 Frontend will be available at: `http://localhost:5173`
+
+To stop manual mode, press `Ctrl+C` in each of the three terminals.
+
+#### Local Service Summary
+
+| Building block | Port | Local endpoint | Development environment |
+|---|---:|---|---|
+| Frontend | 5173 | `http://localhost:5173` | Linux Node.js/npm |
+| Backend API | 8001 | `http://localhost:8001` | `src/backend/.venv`, `PROFILE=dev` |
+| MCP Business API | 8070 | `http://localhost:8070/mcp` | `src/biz_api/loan_approval/.venv`, `PROFILE=dev` |
 
 ## Guidance
 
@@ -381,7 +440,8 @@ Frontend will be available at: `http://localhost:5173`
 
 Once you have the project cloned locally, you can run all the apps locally. For more details on how to run each app check:
 
-- **[Backend setup](#1-start-backend-server-port-8001)**: Backend copilot chat service setup
+- **[One-command launcher](#method-1-start-everything-with-one-script-recommended)**: Start and supervise the complete local system
+- **[Manual startup](#method-2-start-each-building-block-manually)**: Run each building block in a separate terminal
 - **[src/frontend/README.md](./src/frontend/README.md)**: Frontend web app setup
 - **[src/biz_api/loan_approval/README.md](./src/biz_api/loan_approval/README.md)**: MCP business API server setup
 
@@ -432,8 +492,8 @@ If you have product feedback or errors while building visit:
 
 1. **Backend Health Check**:
 ```bash
-curl http://localhost:8001/api/status
-# Expected: {"status": "healthy", "timestamp": "..."}
+curl --fail http://localhost:8001/openapi.json > /dev/null
+# Expected: command exits successfully with HTTP 200
 ```
 
 2. **MCP Server Test**:
